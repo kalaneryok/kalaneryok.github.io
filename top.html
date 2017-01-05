@@ -1,0 +1,60 @@
+<html>
+<head>
+<meta charset=gb2312>
+<style type="text/css">
+*{ margin:0; padding:0;}
+
+#text1{  width:142px;height:25px; padding-left:12px; color:red;
+border:solid 1px white;
+position:absolute;
+top:72px;
+left:1097px;}
+</style>
+
+<script>
+function zhongwen(id)
+{
+alert("你以为这会有用么！")
+}
+function yingwen(id)
+{
+alert("哈哈哈 这个还是没用!!")
+}
+function shouye(id)
+{
+alert("其实 是我不会写!!")
+}
+</script>
+</head>
+<body  >
+<!--&nbsp&nbsp
+&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp-->
+<div>
+	<div style="float:left;"></div>
+	<div style="float:right;"></div>
+	
+	<div><img src="./pic/school.jpg" title="没图盗一张学校的图  寓意在同一个屋檐下"usemap="#abc"/></div>
+</div>
+
+	<map name="abc">
+	<!--中文-->
+		<area shap="rect" onclick="zhongwen(this)" 
+		href="" coords="1090,40,1118,59">
+	<!--英文-->
+		<area shap="rect"               
+		onclick="yingwen(this)"href="" coords="1120,40,1153,59">
+	<!--设为首页-->
+		<area shap="rect" 
+		onclick="shouye(this)"href="" coords="1153,40,1211,59">
+	<!--加入收藏-->
+		<area shap="rect" href="http://www.zjnu.edu.cn" target="_blank"coords="1212,40,1266,59">
+
+	<!--	<area shap="rect" href="http://www.baidu.com" coords="1014,72,1155,96">-->
+	<!--搜索按键-->
+		<area shap="rect" href="http://www.baidu.com" coords="1238,72,1264,96" onclick="alert('请用膳百度！！！')">
+	</map>
+	<div>
+	<input type="text"id="text1" name="shuru " value="想查点什么内">
+	</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<html>
+<head>
+
+<style type="text/css">
+
+
+
+.div1{ 
+		width:300px;
+		 height:69px; 
+		line-height:40px;   
+			overflow:hidden;   
+		padding-left:0px; color:green; 
+		border:solid 1px green;	
+		position:absolute;
+		top:166px;
+		left:12px;
+  } 
+ 
+</style>
+</head>
+<body bgcolor="#2E8FDC"><!-- -->
+<!--
+	<ul>
+		<li><a href="../zjl.html"target="myframeleft">hahaha</a></li>
+		<li><a href="../qq.html"target="myframeright">xixiixi</a></li>
+	<ul>
+	-->
+	<br/>
+	<div class="div1">
+	<!--hidden="true" 
+	<embed  height="100px" width="293px" src="./music/By2 - 我知道.mp3" ></embed>-->
+		<audio controls="controls"autoplay loop id="song"src="./music/PDD.mp3" type="audio/mp3">
+		</audio>
+		<div style="width:300px ;height:41px">
+			<div style="float:left;width:39px ;height:39px">
+			<input type="button" id="shang" onclick=""  style="background-image:url('shang.png');width:39px ;height:39px"/>
+			</div>
+			<div>
+			<input  type="button" id="next" onclick=""  style="background-image:url('next.png');width:39px ;height:39px ;float:right;"/>
+			</div>
+			<!--border:solid 1px red;-->
+			<div style="text-align:left;height:37px;width:260px;line-height:37px;">	<marquee  style="width:215px;"><div id="speck" style="font-size:25px;color:#F00">先来一个欢快的骚猪开场白！！！ </div></marquee>
+			</div>
+		</div>
+	</div>
+	
+		
+
+	
+	
+	<!---->
+	<!--<audio controls="controls" height="100" width="100" >
+  <source src="./music/yanyuan.mp3" type="audio/mp3" />
+  <source src="./music/yanyuan.ogg" type="audio/ogg"e  />
+<embed height="100" width="100" src="./music/yanyuan.mp3" />
+</audio>-->
+			
+</body>
+<script>
+	songkey=5;
+	var songmax=20;
+
+	var songs=[
+	["http://win.web.rf03.sycdn.kuwo.cn/45804d7775db39c16a6c1bdd5959ca75/576f5000/resource/a3/49/15/3276584835.aac","其实我就是你们当中的演员！"],
+	["http://win.web.ra03.sycdn.kuwo.cn/e05ea5d974ad318de26d2644eb9ae403/576f4f41/resource/a1/48/5/78/166453087.aac","我知道我知道我都知道，这是一首难以忘怀的歌！"],
+	["http://win.web.ra03.sycdn.kuwo.cn/2a855e0d19be21754c29e619ce77c478/576f4f91/resource/a3/48/80/36/3367753686.aac","明天你好，明天我们再会！"],
+	["http://win.web.re03.sycdn.kuwo.cn/e0b0c49bb2a41e753af67e9f2789fa2a/576f50ec/resource/a1/3/31/2935627202.aac","这是一首很有魔性的起床铃声，为汪俊成所有！"],
+	["./music/mutouren.mp3","可曾记得，你那黑手机的木头人，我很中意！"],
+	["./music/PDD.mp3","一手有骚猪，天下我有！"],
+	["./music/阿木 - 安妮 - 木.mp3","你以为这是王力宏和卢巧音合唱得<<好心分手>>么,这是歌颂爱情故事的歌曲世间难得，蒋健和凤姐合唱的更是难得！！！我的天"],
+	["http://win.web.rh03.sycdn.kuwo.cn/edc99607ecdddb645aaab4f4c2d6a40a/576f4e82/resource/a2/20/32/3093681305.aac","亲爱的路人，满满的都是何宇超，何宇超曾经追的电视剧《两个爸爸》!"],
+	["http://win.web.rh03.sycdn.kuwo.cn/be67f2684f4dfbc2a5970388782035df/576f5153/resource/a1/54/42/2454904303.aac","这首也是贺鱼敲的回忆作，我的天，居然被何宇超占据了两首！"],
+	["http://win.web.ra03.sycdn.kuwo.cn/db68df59c337b5c77a984c91e5718457/576f521c/resource/a1/48/44/44/4263045695.aac","小胖是不是很有感觉，当年为这首歌，我还买琴弹，我弹的是不是很好听！"],
+	["http://win.web.ra03.sycdn.kuwo.cn/bf28ca8e58728c99cef1063079cfd4fa/576f526c/resource/a3/48/11/77/3113518554.aac","听到这首歌我就想起和你们一同去看电影的日子，我曾经也和女孩子出入过电影院的好么！！！"],
+	["http://win.web.ra03.sycdn.kuwo.cn/c7d35fde745a9a67c6041755353b4fe4/576f52ce/resource/a3/48/93/75/3427637354.aac","小胖夜曲听听，好听么小胖！"],
+	["http://win.web.rg03.sycdn.kuwo.cn/275b397b40689eaebae12cf0f1a6b20f/576f533b/resource/a3/15/80/2739104750.aac","烟火，还记得这嘎达的人，贼好听！"],
+	["http://win.web.ra03.sycdn.kuwo.cn/2a704cd911c4efdc81fbfdbd2080ad52/576f6809/resource/a1/19/23/423530887.aac","各位观众，我唯一看的日剧，被何宇超带上车了，熄灯必看尖山龟，不过还真挺好看的，怀念ing....!"],
+	["http://win.web.ra03.sycdn.kuwo.cn/a945a509bd78649217249771a8d044f7/576f53a8/resource/a3/48/22/25/3809406399.aac","我的魔性起床铃声，不过相比汪俊成，还是略输风骚！"],
+	["./music/花重锦官.mp3","417的小伙伴听到这熟悉的旋律是不是嗯哼嗯哼！一起下青云，从初窥门径到老司机，最激动的事就是我挂机奇遇了，100个玄玉粉！"],
+	["http://win.web.rb03.sycdn.kuwo.cn/49e546462961f1bc6de58a70af8347b5/576f5401/resource/a1/16/83/2174965660.aac","在大一的时候，你们都懂的，虽然现在已经物是人非，但每首歌所代表的意义，所包含的记忆和印记都是挥之不去的！"],
+	["./music/同手同脚-温岚.mp3","不知道就是觉得好听，有猫腻！！！"],
+	["http://win.web.rc03.sycdn.kuwo.cn/0f0f4ed9821e5fde48ac052b6433ef4c/576f5453/resource/a3/96/95/1705728724.aac","最近看了火星情报局，这是我听过的第一首老薛的歌，那个时候根本不知道老薛是谁，现在是在给老薛打广告，老薛记得给广告费！"],
+	["http://win.web.ra03.sycdn.kuwo.cn/e3fe29dc93719d64c7ebe3af5d93d024/576f548f/resource/a3/48/72/55/4241189160.aac","10几年前的雪，我刚听见，会不会洋掉！！"],
+	
+	];
+	var next=document.getElementById("next")
+	next.onclick=function()
+				{
+					var song=document.getElementById("song")
+
+					songkey++;
+					if(songkey==songmax){
+						songkey=0;
+					}
+					song.src=songs[songkey][0];
+					var speck=document.getElementById("speck")
+					speck.innerText=songs[songkey][1];
+		///			console.log(songkey);
+				}		
+	var shang=document.getElementById("shang")
+	shang.onclick=function()
+				{
+					var song=document.getElementById("song")
+					songkey--	
+					if(songkey<0){
+						songkey=songmax-1;
+					}			
+			//		console.log(songkey);
+					song.src=songs[songkey][0];
+					var speck=document.getElementById("speck")
+					speck.innerText=songs[songkey][1];
+				}		
+</script>
+
+</html>
+
